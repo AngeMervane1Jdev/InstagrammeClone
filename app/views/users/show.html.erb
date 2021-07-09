@@ -1,2 +1,6 @@
-<h1><%= @user.name %>のページ</h1>
-<p>Email: <%= @user.email %></p>
+<h1 class="p-3">Bienvenue <%= @user.name %> Sur Iclone</h1>
+
+<div class="container text-center">
+  <%= link_to "Ajouter un post", new_feed_path,class:"btn btn-secondary text-center" %>
+<%= link_to "Voir les posts", feeds_path,class:"btn btn-secondary text-center" %>
+</div>

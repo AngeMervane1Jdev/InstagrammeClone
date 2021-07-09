@@ -13,7 +13,10 @@ class UsersController < ApplicationController
     end
   end
   def show
-      @user = User.find(params[:id])
+
+    @user = User.find(params[:id])
+    @feed= Feed.find_by user_id: @user.id
+      
   end
     private
     def user_params

@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Image:</strong>
+  <div style="width: 18rem;">
+    <%= image_tag @feed.image.url ,class:'img-fluid w-50 img-thumbnail'%>
+  </div>
+  <p><%= @feed.content %></p> 
+</p>
+
+<%= link_to 'Edit', edit_feed_path(@feed) %> |
+<%= link_to 'Back', feeds_path %>
