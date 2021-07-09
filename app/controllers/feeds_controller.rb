@@ -26,7 +26,7 @@ class FeedsController < ApplicationController
     @feed.user_id=current_user.id
     respond_to do |format|
       if @feed.save
-        format.html { redirect_to @feed, notice: "Feed was successfully created." }
+        format.html { redirect_to @feed, notice: "Post was successfully created." }
         format.json { render :show, status: :created, location: @feed }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +39,7 @@ class FeedsController < ApplicationController
   def update
     respond_to do |format|
       if @feed.update(feed_params)
-        format.html { redirect_to @feed, notice: "Feed was successfully updated." }
+        format.html { redirect_to @feed, notice: "Post was successfully updated." }
         format.json { render :show, status: :ok, location: @feed }
       else
         format.html { render :edit, status: :unprocessable_entity }
