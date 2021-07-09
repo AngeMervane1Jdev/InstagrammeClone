@@ -4,11 +4,12 @@ class FeedsController < ApplicationController
   # GET /feeds or /feeds.json
   def index
     @feeds = Feed.all
+    @user=User.all
   end
 
   # GET /feeds/1 or /feeds/1.json
   def show
-
+   
   end
 
   # GET /feeds/new
@@ -52,7 +53,7 @@ class FeedsController < ApplicationController
   def destroy
     @feed.destroy
     respond_to do |format|
-      format.html { redirect_to feeds_url, notice: "Feed was successfully destroyed." }
+      format.html { redirect_to feeds_url, notice: "Post was successfully destroyed." }
       format.json { head :no_content }
     end
   end
