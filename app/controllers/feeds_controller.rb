@@ -1,5 +1,5 @@
 class FeedsController < ApplicationController
-  before_action :set_feed, only: %i[ show edit update destroy ]
+  before_action :set_feed, only: [ :show ,:edit ,:update ,:destroy ]
 
   # GET /feeds or /feeds.json
   def index
@@ -9,7 +9,7 @@ class FeedsController < ApplicationController
 
   # GET /feeds/1 or /feeds/1.json
   def show
-   
+    @feed = Feed.find(params[:id])
   end
 
   # GET /feeds/new
@@ -19,6 +19,7 @@ class FeedsController < ApplicationController
 
   # GET /feeds/1/edit
   def edit
+
   end
 
   # POST /feeds or /feeds.json
@@ -59,6 +60,7 @@ class FeedsController < ApplicationController
   end
   def confirm
     @feed = Feed.new(feed_params)
+    render :new if @feed.invalid?
   end
   private
     # Use callbacks to share common setup or constraints between actions.

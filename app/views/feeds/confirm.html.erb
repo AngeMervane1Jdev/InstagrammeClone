@@ -1,10 +1,19 @@
 <h1>Ecran de confirmation</h1>
-<%= form_with(model: @feed, url: feeds_path, local: true) do |form| %>
-  <%= image_tag(@feed.image.url) if @feed.image && @feed.image.url %>
-  <%= form.hidden_field :image_cache %>
-  <%= form.submit "Poster" %>
-<% end %>
-<%= form_with(model:@feed, url:new_feed_path, local:true, method:"get") do |form| %>
-  <%= form.hidden_field :image_cache %>
-  <%= form.submit "戻る", name: "back" %>
-<% end %>
+<div class="container">
+  <div class="text-center">
+    <div class="column">
+      <div class="row">
+        <%= form_with(model: @feed, url: feeds_path, local: true) do |form| %>
+        <%= image_tag(@feed.image.url) if @feed.image && @feed.image.url %>
+        <p><%=@feed.content %></p>
+        <%= form.hidden_field :image_cache %>
+        <%= form.submit "Poster" ,class:'btn btn-success'%>
+      <% end %>
+          <%= form_with(model:@feed, url:new_feed_path, local:true, method:"get") do |form| %>
+          <%= form.hidden_field :image_cache %>
+          <%= form.submit "Revenir", name: "back" ,class:'btn btn-warning'%>
+      
+      <% end %>
+      </div>
+  </div>
+</div>

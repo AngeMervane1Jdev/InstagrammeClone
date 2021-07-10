@@ -7,7 +7,13 @@
   <div class="card">
     <div class="card-head md-3">
       <div class="card m-3"   style="width: 25rem;">
-        <%= image_tag feed.image.url class:'card-img-top',size:"100" %>
+        <% if feed.image.url %>
+
+        <%= image_tag feed.image.url,class:'card-img-top'%>
+        <% else %>
+        <%= image_tag("default.png",:alt => "--",class:'card-img-top' )%>
+        <% end %>
+        
        </div>
        <div class="card-title">
           <h3 class='text-center text-info'><%= feed.content %></h3>

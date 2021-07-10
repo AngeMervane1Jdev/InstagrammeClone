@@ -3,7 +3,13 @@
 <p>
   <strong>Image:</strong>
   <div style="width: 18rem;">
-    <%= image_tag @feed.image.url ,class:'img-fluid w-50 img-thumbnail'%>
+    <% if @feed.image.url %>
+
+    <%= image_tag @feed.image.url,class:'img-fluid w-50 img-thumbnail'%>
+    <% else %>
+    <%= image_tag('index.png',:alt => "--",class:'img-fluid w-50 img-thumbnail')%>
+    <% end %>
+    
   </div>
   <p><%= @feed.content %></p> 
 </p>
